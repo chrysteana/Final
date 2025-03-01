@@ -12,6 +12,7 @@ public class NewBehaviourScript : MonoBehaviour
     private Rigidbody2D rb;
     public int speed = 10;
     public string nextLevel = "Scene2";
+    public string nextLevel1 = "Scene3";
 
     void Start()
     {
@@ -34,11 +35,12 @@ public class NewBehaviourScript : MonoBehaviour
 
 
 
-        /* if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 1);
+            rb.velocity = new Vector2(rb.velocity.x, 7);
             //transform.position += new Vector3(0, 1, 0);
         }
+        /*
         if (Input.GetKeyDown(KeyCode.A))
         {
             rb.velocity = new Vector2(-1, rb.velocity.y);
@@ -81,6 +83,7 @@ public class NewBehaviourScript : MonoBehaviour
             case "Finish":
                 {
                     SceneManager.LoadScene(nextLevel);
+                    SceneManager.LoadScene(nextLevel1);
                     break;
 
                 }

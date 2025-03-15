@@ -10,19 +10,20 @@ public class NewBehaviourScript : MonoBehaviour
     int okay = 2;
     // Start is called before the first frame update
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     public int speed = 10;
     public string nextLevel = "Scene2";
-    public string nextLevel1 = "Scene3";
 
     void Start()
     {
         rb = (GetComponent<Rigidbody2D>());
-        Debug.Log("Hello World");
-        string String2 = "World";
-        Debug.Log(String+String2);
+        sr = (GetComponent<SpriteRenderer>());
+        //Debug.Log("Hello World");
+        //string String2 = "World";
+        //Debug.Log(String+String2);
         /* HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 
          * assaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
-        
+
     }
 
     // Update is called once per frame
@@ -33,7 +34,15 @@ public class NewBehaviourScript : MonoBehaviour
 
         //rb.velocity = new Vector2(-1, rb.velocity.y);
 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+           sr.color = Color.magenta;
+        }
 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            sr.color = Color.white;
+        }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -83,7 +92,6 @@ public class NewBehaviourScript : MonoBehaviour
             case "Finish":
                 {
                     SceneManager.LoadScene(nextLevel);
-                    SceneManager.LoadScene(nextLevel1);
                     break;
 
                 }

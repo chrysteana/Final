@@ -14,6 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
     public int speed = 10;
     public string nextLevel = "Scene2";
 
+
     void Start()
     {
         rb = (GetComponent<Rigidbody2D>());
@@ -46,7 +47,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 7);
+            rb.velocity = new Vector2(rb.velocity.x, 1);
             //transform.position += new Vector3(0, 1, 0);
         }
         /*

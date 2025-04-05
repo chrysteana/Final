@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2d(Collider2d collision)
+    /*private void OnTriggerEnter2d(Collider2d collision)
     {
         switch (collision.tag)
         { 
@@ -23,7 +23,7 @@ public class Coin : MonoBehaviour
                     break;
                 }
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()

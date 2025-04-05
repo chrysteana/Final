@@ -19,7 +19,7 @@ public class Coin : MonoBehaviour
             case "Coin":
                 {
                     coinCounter++;
-                    Destroy(collisin.gameObject);
+                    Destroy(collision.gameObject);
                     break;
                 }
         }

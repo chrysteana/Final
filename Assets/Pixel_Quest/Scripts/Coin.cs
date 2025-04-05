@@ -12,18 +12,18 @@ public class Coin : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2d(Collider2d collision)
+    /*private void OnTriggerEnter2d(Collider2d collision)
     {
         switch (collision.tag)
         { 
             case "Coin":
                 {
                     coinCounter++;
-                    Destroy(collisin.gameObject);
+                    Destroy(collision.gameObject);
                     break;
                 }
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()

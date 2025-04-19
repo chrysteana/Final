@@ -13,6 +13,9 @@ public class NewBehaviourScript : MonoBehaviour
     private SpriteRenderer sr;
     public int speed = 10;
     public string nextLevel = "Level_2";
+    [SerializeField] private Animator animator;
+    bool facingRight = true;
+    
 
 
     void Start()
@@ -56,7 +59,6 @@ public class NewBehaviourScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             rb.velocity = new Vector2(-4, rb.velocity.y);
-            
         
         }
         /*
@@ -79,6 +81,22 @@ public class NewBehaviourScript : MonoBehaviour
         /* float yInput = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(rb.velocity.x, yInput);
         Debug.Log(yInput); */
+
+        
+        if (xInput != 0){
+            animator.SetBool("Walking", true);
+        }
+        else{
+            animator.SetBool("Walking", false);
+        }
+
+        if (xInput > 0 && !facingRight){
+            Flip();
+        }
+
+        if (xInput < 0 && facingRight){
+            Flip();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -98,9 +116,18 @@ public class NewBehaviourScript : MonoBehaviour
                 {
                     SceneManager.LoadScene(nextLevel);
                     break;
-
                 }
         }
     }
 
+    void Flip()
+    { 
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        facingRight = !facingRight;
+    }
+
 }
+

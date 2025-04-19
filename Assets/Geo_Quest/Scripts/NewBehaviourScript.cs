@@ -12,7 +12,7 @@ public class NewBehaviourScript : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     public int speed = 10;
-    public string nextLevel = "Scene2";
+    public string nextLevel = "Level_2";
 
 
     void Start()
@@ -47,15 +47,19 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 1);
+            rb.velocity = new Vector2(rb.velocity.x, 5);
             //transform.position += new Vector3(0, 1, 0);
         }
-        /*
+        
+
+        
         if (Input.GetKeyDown(KeyCode.A))
         {
-            rb.velocity = new Vector2(-1, rb.velocity.y);
-            //transform.position += new Vector3(-1, 0, 0);
+            rb.velocity = new Vector2(-4, rb.velocity.y);
+            
+        
         }
+        /*
         if (Input.GetKeyDown(KeyCode.S))
         {
             rb.velocity = new Vector2(rb.velocity.x, -1);

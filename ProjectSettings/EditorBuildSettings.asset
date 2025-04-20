@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Pixel_Quest/Scenes/Level_2.unity
     guid: 41841e8efb9205c4ba40d9e855fc6dc5
+  - enabled: 1
+    path: Assets/Pixel_Quest/Scenes/Task1.unity
+    guid: 589850e7b7617ae43a3e5414bb7d7553
+  - enabled: 1
+    path: Assets/Pixel_Quest/Scenes/Task1-2.unity
+    guid: 454b3c802543ded4c9b3aa91da84b72e
   m_configObjects: {}

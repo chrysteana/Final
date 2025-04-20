@@ -114,6 +114,7 @@ public class NewBehaviourScript : MonoBehaviour
 
             case "Finish":
                 {
+                    Debug.Log("hit");
                     SceneManager.LoadScene(nextLevel);
                     break;
                 }

@@ -112,12 +112,20 @@ public class NewBehaviourScript : MonoBehaviour
                     break;
                 }
 
+            case "dialogue":
+                {
+                    Debug.Log("hit");
+                    SceneManager.LoadScene(nextLevel);
+                    break;
+                }
+
             case "Finish":
                 {
                     Debug.Log("hit");
                     SceneManager.LoadScene(nextLevel);
                     break;
                 }
+        
         }
     }
 

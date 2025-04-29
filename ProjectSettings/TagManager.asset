@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - Floor
   - dialogue
+  - TalkZone
   layers:
   - Default
   - TransparentFX

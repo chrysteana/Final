@@ -11,6 +11,7 @@ TagManager:
   - Floor
   - dialogue
   - TalkZone
+  - Crate
   layers:
   - Default
   - TransparentFX

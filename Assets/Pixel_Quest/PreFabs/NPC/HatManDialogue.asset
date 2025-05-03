@@ -15,8 +15,11 @@ MonoBehaviour:
   npcName: Hat Man
   npcPortrait: {fileID: 21300000, guid: a6adcfb84d9054ac486ef7a10722243d, type: 3}
   dialogueLines:
-  - Hi
-  - Hi Again
+  - I heard you were looking for someone?
+  - Let me think. Back when this town was alive, I delivered many messages. Maybe
+    what you seek is in one of my forgotten letters.
+  - "But my eyesight isn't what it used to be, I\u2019m a ghost now. If you can find
+    it you can have it. I think it should be past the double trees."
   typingSpeed: 0
   voiceSound: {fileID: 0}
   voicePitch: 1

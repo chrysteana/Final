@@ -9,6 +9,9 @@ TagManager:
   - Health
   - Coin
   - Floor
+  - dialogue
+  - TalkZone
+  - Crate
   layers:
   - Default
   - TransparentFX

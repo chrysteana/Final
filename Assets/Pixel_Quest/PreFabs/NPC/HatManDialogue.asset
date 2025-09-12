@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d502b45a552ffca4b91943f8aa00ea34, type: 3}
+  m_Name: HatManDialogue
+  m_EditorClassIdentifier: 
+  npcName: Hat Man
+  npcPortrait: {fileID: 21300000, guid: a6adcfb84d9054ac486ef7a10722243d, type: 3}
+  dialogueLines:
+  - I heard you were looking for someone?
+  - Let me think. Back when this town was alive, I delivered many messages. Maybe
+    what you seek is in one of my forgotten letters.
+  - "But my eyesight isn't what it used to be, I\u2019m a ghost now. If you can find
+    it you can have it. I think it should be past the double trees."
+  typingSpeed: 0
+  voiceSound: {fileID: 0}
+  voicePitch: 1
+  autoProgressLines: 
+  autoProgressDelay: 1.5

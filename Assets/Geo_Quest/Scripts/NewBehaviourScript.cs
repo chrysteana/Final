@@ -6,13 +6,17 @@ using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 
 public class NewBehaviourScript : MonoBehaviour
-{ string String = "Hello "; 
+{
+    string String = "Hello ";
     int okay = 2;
     // Start is called before the first frame update
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     public int speed = 10;
-    public string nextLevel = "Scene2";
+    public string nextLevel = "Level_2";
+    [SerializeField] private Animator animator;
+    bool facingRight = true;
+
 
 
     void Start()
@@ -37,7 +41,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-           sr.color = Color.magenta;
+            sr.color = Color.magenta;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -47,15 +51,18 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 1);
+            rb.velocity = new Vector2(rb.velocity.x, 5);
             //transform.position += new Vector3(0, 1, 0);
         }
-        /*
+
+
+
         if (Input.GetKeyDown(KeyCode.A))
         {
-            rb.velocity = new Vector2(-1, rb.velocity.y);
-            //transform.position += new Vector3(-1, 0, 0);
+            rb.velocity = new Vector2(-4, rb.velocity.y);
+
         }
+        /*
         if (Input.GetKeyDown(KeyCode.S))
         {
             rb.velocity = new Vector2(rb.velocity.x, -1);
@@ -69,12 +76,32 @@ public class NewBehaviourScript : MonoBehaviour
         //transform.position += new Vector3 (0.005f, 0, 0);
 
         float xInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(xInput*speed, rb.velocity.y);
+        rb.velocity = new Vector2(xInput * speed, rb.velocity.y);
         //Debug.Log(xInput);
 
         /* float yInput = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(rb.velocity.x, yInput);
         Debug.Log(yInput); */
+
+
+        if (xInput != 0)
+        {
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
+        }
+
+        if (xInput > 0 && !facingRight)
+        {
+            Flip();
+        }
+
+        if (xInput < 0 && facingRight)
+        {
+            Flip();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -82,21 +109,52 @@ public class NewBehaviourScript : MonoBehaviour
         Debug.Log("Hit");
         switch (collision.tag)
         {
-            case "Death":
+
+            case "dialogue":
                 {
-                    string thisLevel = SceneManager.GetActiveScene().name;
-                    SceneManager.LoadScene(thisLevel);
-                    Debug.Log("Player Dead");
+                    Debug.Log("hit");
+                    SceneManager.LoadScene(nextLevel);
                     break;
                 }
 
             case "Finish":
                 {
+                    Debug.Log("hit");
                     SceneManager.LoadScene(nextLevel);
                     break;
+                }
 
+            case "Untagged":
+                {
+                    Debug.Log("hit unknown");
+                    break;
                 }
         }
     }
 
-}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        switch (collision.transform.tag)
+        {
+            case "Death":
+                {
+                    string thisLevel = SceneManager.GetActiveScene().name;
+                    SceneManager.LoadScene(thisLevel);
+                    Debug.Log("Player Dead");
+
+                    break;
+                }
+
+        }
+    }
+        void Flip()
+        {
+            Vector3 currentScale = gameObject.transform.localScale;
+            currentScale.x *= -1;
+            gameObject.transform.localScale = currentScale;
+
+            facingRight = !facingRight;
+        }
+
+    }
+
